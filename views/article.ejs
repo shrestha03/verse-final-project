@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project-2</title>
+    <link rel="stylesheet" href="AB.css">
+
+</head>
+<body>
+    <h1><%= heading %></h1>
+    <a href="/" class="home-button">Home</a>
+
+    <form action="/<%= src %>" method="POST" name="Cluster">
+        <div class="container">
+            <p style="margin-bottom: 0;">Please select the Cluster number:</p>
+            <select id="selector" name="ID">
+              <% for (let i = 0; i <= 16; i++) { %>
+                  <option value="<%= i %>" <%= (pid === String(i)) ? 'selected' : '' %>><%= i %></option>
+              <% } %>
+          </select>
+            <button type="submit" id="submit-btn">SUBMIT</button>
+        </div>
+    </form>
+
+     
+  <h1>Total number of articles : <%= data.length %><br><a href="<%= url %>">Click to Check Intracluster Similarity Score</a></h1>
+  <img src="\histograms\<%=src%>_<%=pid%>.png" align="center" alt="Histogram"/>
+     <% let counter = 1; %>
+     <% data.forEach(function(article) { %>
+       <p><%= counter %>. <%= article.title %></p><br>
+       <% counter++; %>
+     <% }); %>
+
+</body>
+</html>
