@@ -9,7 +9,6 @@
 </head>
 <body>
     <h1><%= heading %></h1>
-    <a href="/" class="home-button">HOME</a>
 
     <form action="/<%= src %>" method="POST" name="Cluster">
         <div class="container">
@@ -24,7 +23,7 @@
     </form>
 
      
-  <h1>Total number of articles : <%= data.length %><br><a href="<%= url %>">Click to Check Intracluster Similarity Score</a></h1>
+  <h1> <a href="/" class="home-button">HOME</a> <a href="/<%= src %>" class="home-button">NEW ID</a>  Total number of articles : <%= data.length %><br><a href="<%= url %>">Click to Check Intracluster Similarity Score</a></h1>
   <img src="\histograms\<%=src%>_<%=pid%>.png" align="center" alt="Histogram"/>
      <% let counter = 1; %>
      <% data.forEach(function(article) { %>

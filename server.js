@@ -94,6 +94,7 @@ app.post("/agglo_bert", function (req, res) {
         res.status(500).send("Error occurred"); // send an error response
       });
   });
+
   
 
 app.listen(3000, function (req, res) {
